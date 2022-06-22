@@ -1,10 +1,15 @@
 package com.example.actuator_aot;
 
+import java.util.List;
+
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.actuate.audit.listener.AuditApplicationEvent;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.metrics.buffering.BufferingApplicationStartup;
+import org.springframework.cache.concurrent.ConcurrentMapCache;
+import org.springframework.cache.support.NoOpCache;
+import org.springframework.cache.support.SimpleCacheManager;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.context.annotation.Bean;
 
@@ -20,6 +25,16 @@ public class ActuatorAotApplication {
 	@Bean
 	CommandLineRunner generateAuditEvent(ApplicationEventPublisher publisher) {
 		return args -> publisher.publishEvent(new AuditApplicationEvent("mhalbritter", "type-1", "some-data", "some-more-data"));
+	}
+
+	@Bean
+	SimpleCacheManager cacheManager() {
+		SimpleCacheManager manager = new SimpleCacheManager();
+		manager.setCaches(List.of(
+				new ConcurrentMapCache("cache-1"),
+				new NoOpCache("cache-2")
+		));
+		return manager;
 	}
 
 }
