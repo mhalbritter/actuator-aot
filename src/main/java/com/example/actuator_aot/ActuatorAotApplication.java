@@ -2,6 +2,9 @@ package com.example.actuator_aot;
 
 import java.util.List;
 
+import com.example.actuator_aot.hints.FlywayRuntimeHints;
+import com.example.actuator_aot.hints.HikariRuntimeHints;
+
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.actuate.audit.listener.AuditApplicationEvent;
@@ -12,8 +15,10 @@ import org.springframework.cache.support.NoOpCache;
 import org.springframework.cache.support.SimpleCacheManager;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ImportRuntimeHints;
 
 @SpringBootApplication
+@ImportRuntimeHints({ FlywayRuntimeHints.class, HikariRuntimeHints.class })
 public class ActuatorAotApplication {
 
 	public static void main(String[] args) {
