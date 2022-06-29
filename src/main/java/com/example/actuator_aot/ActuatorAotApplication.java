@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.example.actuator_aot.hints.FlywayRuntimeHints;
 import com.example.actuator_aot.hints.HikariRuntimeHints;
+import com.example.actuator_aot.hints.QuartzRuntimeHints;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -20,7 +21,7 @@ import org.springframework.session.FindByIndexNameSessionRepository;
 import org.springframework.session.MapSession;
 
 @SpringBootApplication
-@ImportRuntimeHints({ FlywayRuntimeHints.class, HikariRuntimeHints.class })
+@ImportRuntimeHints({ FlywayRuntimeHints.class, HikariRuntimeHints.class, QuartzRuntimeHints.class })
 public class ActuatorAotApplication {
 
     public static void main(String[] args) {

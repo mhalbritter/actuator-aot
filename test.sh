@@ -3,12 +3,12 @@
 set -euo pipefail
 
 # TODO https://docs.spring.io/spring-boot/docs/3.0.0-SNAPSHOT/actuator-api/htmlsingle/
-# TODO /integrationgraph /liquibase /quartz
+# TODO /integrationgraph /liquibase
 
 # Works, but not tested in the script: POST /shutdown
 # Doesn't work: /threaddump
 
-paths=(/ /auditevents /custom /beans /caches /conditions /configprops /env /flyway /health /httptrace /info /logfile /loggers /metrics /mappings /prometheus /scheduledtasks /sessions?username=bar /startup )
+paths=(/ /auditevents /custom /beans /caches /conditions /configprops /env /flyway /health /httptrace /info /logfile /loggers /metrics /mappings /prometheus /quartz /scheduledtasks /sessions?username=bar /startup )
 fail_fast=true
 
 for path in ${paths[@]}; do
