@@ -17,3 +17,6 @@ Spring Boot Application which I use to test actuator AOT support.
         at org.springframework.boot.actuate.management.ThreadDumpEndpoint.getFormattedThreadDump(ThreadDumpEndpoint.java:51) ~[actuator-aot:3.0.0-SNAPSHOT]
         at org.springframework.boot.actuate.management.ThreadDumpEndpoint.textThreadDump(ThreadDumpEndpoint.java:47) ~[actuator-aot:3.0.0-SNAPSHOT]
   ```
+* Couldn't
+  test `/integrationgraph`: https://github.com/spring-projects/spring-framework/issues/28727
+* 
