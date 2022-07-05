@@ -5,7 +5,7 @@ import java.util.Set;
 import org.springframework.aot.hint.ExecutableHint;
 import org.springframework.aot.hint.ReflectionHints;
 import org.springframework.aot.hint.TypeHint;
-import org.springframework.aot.hint.support.BindingReflectionHintsRegistrar;
+import org.springframework.context.aot.BindingReflectionHintsRegistrar;
 
 /**
  * @author Moritz Halbritter

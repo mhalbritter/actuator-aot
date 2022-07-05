@@ -5,6 +5,7 @@ import java.util.List;
 import com.example.actuator_aot.hints.FlywayRuntimeHints;
 import com.example.actuator_aot.hints.HikariRuntimeHints;
 import com.example.actuator_aot.hints.IntegrationRuntimeHints;
+import com.example.actuator_aot.hints.LiquibaseRuntimeHints;
 import com.example.actuator_aot.hints.QuartzRuntimeHints;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,7 +26,7 @@ import org.springframework.session.FindByIndexNameSessionRepository;
 import org.springframework.session.MapSession;
 
 @SpringBootApplication
-@ImportRuntimeHints({ FlywayRuntimeHints.class, HikariRuntimeHints.class, QuartzRuntimeHints.class, IntegrationRuntimeHints.class })
+@ImportRuntimeHints({ FlywayRuntimeHints.class, HikariRuntimeHints.class, QuartzRuntimeHints.class, IntegrationRuntimeHints.class, LiquibaseRuntimeHints.class })
 public class ActuatorAotApplication {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(ActuatorAotApplication.class);
